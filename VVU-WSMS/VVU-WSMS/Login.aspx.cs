@@ -70,7 +70,7 @@ namespace VVU_WSMS
                     if (Utype == "A")
                     {
                         Session["USERNAME"] = Username.Text;
-                        Response.Redirect("~/Default.aspx");
+                        Response.Redirect("~/Admin.aspx");
                     }
                 }
                 else

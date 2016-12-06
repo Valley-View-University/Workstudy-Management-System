@@ -32,3 +32,21 @@
 .body{
     padding-top:50px;
 }
+.leftPanel{
+    width:300px;
+    float:left;
+    position:relative;
+}
+
+.rightPanel{
+    width:300px;
+    float:left;
+    position:relative;
+}
+.gridPosition{
+    position:absolute;
+    left:234px;
+    top:-338px;
+    height:200px;
+    width:200px;
+}

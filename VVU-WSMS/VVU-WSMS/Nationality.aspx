@@ -1,4 +1,4 @@
-﻿  <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="VVU_WSMS.Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Nationality.aspx.cs" Inherits="VVU_WSMS.Nationality" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/ >
     <meta name"viewport" content="width-device-width, initial-scale-1.0"/>
-    <title>Authenticate</title>
+    <title>Admin-Departments</title>
     
     <link href="Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="Content/bootstrap.css" rel="stylesheet" />
@@ -36,21 +36,24 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class=""><a href="Login.aspx">Home</a></li>
-                            <li><a href="Login.aspx">Login</a></li>
-                            <li><a href="Registration.aspx">Sign Up</a></li>
+                            <li>
+                                <asp:Button ID="btnAdminSignOut" runat="server" Class="btn btn-default navbar-btn " Text="Logout" OnClick="btnAdminSignOut_Click" />
+                            </li>
                         </ul>
                     </div>
                 </div>
            </div>
        </div>
   <!---Navbar end--->
+        
+<!---Department form-->
+        <div class="container">
+         <!--  <div class="">-->
+            
+       </div>
+<!---Department form-->
 
-        <div class="center-page">
 
-<asp:GridView ID="GridView1" runat="server"></asp:GridView>
-
-        </div>
   
   <!---Footer--->
        <hr />

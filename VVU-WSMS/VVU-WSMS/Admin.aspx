@@ -1,4 +1,4 @@
-﻿  <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="VVU_WSMS.Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="VVU_WSMS.Admin" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/ >
     <meta name"viewport" content="width-device-width, initial-scale-1.0"/>
-    <title>Authenticate</title>
+    <title>Administrator</title>
     
     <link href="Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="Content/bootstrap.css" rel="stylesheet" />
@@ -34,11 +34,11 @@
                         </button>
                         <a class="navbar-brand" href="Login.aspx"> <span><img alt="Logo" src="Images/vvu-logo.png" height="30" /></span> VVU WSMS</a>
                     </div>
-                    <div class="navbar-collapse collapse">
+                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class=""><a href="Login.aspx">Home</a></li>
-                            <li><a href="Login.aspx">Login</a></li>
-                            <li><a href="Registration.aspx">Sign Up</a></li>
+                            <li>
+                                <asp:Button ID="btnAdminSignOut" runat="server" Class="btn btn-default navbar-btn " Text="Logout" OnClick="btnAdminSignOut_Click" />
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -46,11 +46,27 @@
        </div>
   <!---Navbar end--->
 
-        <div class="center-page">
+<!--Creating links to various tables-->
+        <div class="center">
+        <!--<div class="center-page">-->
+            <div class="col-xs-11">
+                <a class="col-xs-11" href="Departments.aspx"><span><img alt="" src="Images/Departments.jpg" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">Departments</h4>
+            </div>
+            <div class="col-xs-11">
+                <a class="col-xs-11" href="#"><span><img alt="" src="Images/prog.jpg" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">Programmes</h4>
+            </div>
+            <div class="col-xs-11">
+                <a class="col-xs-11" href="#"><span><img alt="" src="Images/Nation.jpg" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">Nationality</h4>
+            </div>
+            
 
-<asp:GridView ID="GridView1" runat="server"></asp:GridView>
-
+        <!--</div>-->
         </div>
+<!--Creating links to various tables-->
+
   
   <!---Footer--->
        <hr />
@@ -69,4 +85,5 @@
 
 </body>
 </html>
+
 
