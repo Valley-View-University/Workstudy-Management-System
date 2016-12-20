@@ -1,13 +1,13 @@
-﻿  <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="VVU_WSMS.Registration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Student Page.aspx.cs" Inherits="VVU_WSMS.Student_Page" %>
 
 <!DOCTYPE html>
 
-<html xmlns="http://ww.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/ >
     <meta name"viewport" content="width-device-width, initial-scale-1.0"/>
-    <title>Register</title>
+    <title>Student Registration</title>
     
     <link href="Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="Content/bootstrap.css" rel="stylesheet" />
@@ -17,11 +17,33 @@
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script src="Scripts/respond.min.js"></script>
 
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 223px;
+            height: 168px;
+        }
+        .auto-style3 {
+            width: 336px;
+        }
+        .auto-style4 {
+            width: 260px;
+            height: 179px;
+        }
+        .auto-style5 {
+            width: 312px;
+        }
+        .auto-style6 {
+            width: 14px;
+        }
+    </style>
+
 </head>
 <body>
-
-    <form id="form2" runat="server">
-       <div>
+    <form id="form1" runat="server">
+    <div>
         <!---position of navigation bar-->
            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
@@ -36,49 +58,40 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="Login.aspx">Home</a></li>
-                            <li><a href="Login.aspx">Login</a></li>
+                            <li>
+                                <asp:Button ID="btnSignOut" runat="server" Class="btn btn-default navbar-btn " Text="Logout" OnClick="btnSignOut_Click" />
+                            </li>
                         </ul>
                     </div>
                 </div>
            </div>
         </div>
-  <!---Sign up page-->
-        <div class="center-page">
+        <!---Navbar--->
 
-            <label class="col-xs-11">Username</label>
-            <div class="col-xs-11">
-            <asp:TextBox ID="txtUsername" runat="server" Class="form-control" placeholder="Username"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">Password</label>
-            <div class="col-xs-11">
-            <asp:TextBox ID="txtPassword" runat="server" Class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">Confirm Password</label>
-            <div class="col-xs-11">
-            <asp:TextBox ID="txtConfirmPass" runat="server" Class="form-control" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">Name</label>
-            <div class="col-xs-11">
-            <asp:TextBox ID="txtName" runat="server" Class="form-control" placeholder="Name"></asp:TextBox>
-            </div>
-
-            <label class="col-xs-11">Email</label>
-            <div class="col-xs-11">
-            <asp:TextBox ID="txtEmail" runat="server" Class="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
-            </div>
-
-            <div class="col-xs-11 space-vert">
-            <asp:Button ID="btnSignup" runat="server" Class="btn btn-success" Text="Sign Up" OnClick="btnSignup_Click"></asp:Button>
-                <asp:Label ID="LabMsg" runat="server"></asp:Label>
-            </div>
+             <!--<div class="center-page">-->
+        <div class="center">
+           <div class="form-group"
+                <div class="form-horizontal"
+                 <div class="col-xs-11">
+                    <a class="col-xs-11" href="Students.aspx"><span><img alt="" src="Images/register.jpg" width="140"  height="140" /></span> </a>
+                    <h4 class="col-xs-11">Registration</h4>
+                 </div>
+                
+                    <div class="col-xs-11">
+                       
+                        <a class="col-xs-11" href="#"><span><img alt="" src="Images/reep.png" width="140"  height="140" /></span></a></div>
+                            <h4 class="col-xs-11">
+                            <asp:LinkButton ID="lnStudentRep" runat="server" OnClick="lnStudentRep_Click">Report</asp:LinkButton>
+                            </h4>
+                </div>
+           </div>
         </div>
-<!---Sign up--->
-  
-  <!---Footer--->
+
+
+        
+        <!---Footer--->
+        
+    </form>
         <hr />
        <footer class="footer-pos">
              <div class="container">
@@ -95,4 +108,3 @@
 
 </body>
 </html>
-

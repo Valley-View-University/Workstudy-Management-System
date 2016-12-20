@@ -48,14 +48,17 @@
 
 <!--Creating links to various tables-->
         <div class="center">
+            <h2>Admin Page</h2>
+                <hr />
         <!--<div class="center-page">-->
             <div class="col-xs-11">
-                <a class="col-xs-11" href="Departments.aspx"><span><img alt="" src="Images/Departments.jpg" width="140"  height="140" /></span> </a>
-                <h4 class="col-xs-11">Departments</h4>
-            </div>
+                <a class="col-xs-11" href="Payments.aspx"><span><img alt="" src="Images/pay.jpg" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">Payment</h4>
             <div class="col-xs-11">
-                <a class="col-xs-11" href="#"><span><img alt="" src="Images/prog.jpg" width="140"  height="140" /></span> </a>
-                <h4 class="col-xs-11">Programmes</h4>
+                <a class="col-xs-11" href="#"><span><img alt="" src="Images/reep.png" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">
+                    <asp:LinkButton ID="lnReport" runat="server" OnClick="lnReport_Click">Programmes</asp:LinkButton>
+                </h4>
             </div>
             <div class="col-xs-11">
                 <a class="col-xs-11" href="#"><span><img alt="" src="Images/Nation.jpg" width="140"  height="140" /></span> </a>
@@ -68,15 +71,17 @@
 <!--Creating links to various tables-->
 
   
-  <!---Footer--->
-       <hr />
-       <footer class="footer-pos">
+   <!---Footer--->
+        <p>
+            &nbsp;</p>
+        <hr />
+       <footer class="form-group">
              <div class="container">
                  <p class="pull-right"><a href="#">Back to the top</a></p> 
                  <p class="">&copy; 2016 - VVU WorkStudy Management System &middot; </p>
              </div>
        </footer>
-  <!---Footer-->               
+  <!---Footer-->                  
     </form>
 
 

@@ -10,33 +10,33 @@
 namespace VVU_WSMS {
     
     
-    public partial class Admin {
+    public partial class Student_Page {
         
         /// <summary>
-        /// form2 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// btnAdminSignOut control.
+        /// btnSignOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdminSignOut;
+        protected global::System.Web.UI.WebControls.Button btnSignOut;
         
         /// <summary>
-        /// lnReport control.
+        /// lnStudentRep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnReport;
+        protected global::System.Web.UI.WebControls.LinkButton lnStudentRep;
     }
 }

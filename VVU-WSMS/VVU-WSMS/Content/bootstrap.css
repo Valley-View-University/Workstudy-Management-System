@@ -918,6 +918,8 @@ pre code {
 
 .col-xs-11 {
   width: 91.66666666666666%;
+    top: -3px;
+    left: 55px;
 }
 
 .col-xs-12 {
@@ -4169,8 +4171,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
-  right: -3px;
-  left: 3px;
+  right: 0px;
+  left: 0px;
   border-width: 0 0 1px;
 }
 

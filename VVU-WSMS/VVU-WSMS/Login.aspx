@@ -52,7 +52,7 @@
        <div class="container">
          <!--  <div class="">-->
             <div class="form-horizontal">
-                <h2>Login</h2>
+                <h2 class="h2">Login</h2>
                 <hr />
                 <div class="form-group">
                    <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="Username"></asp:Label>

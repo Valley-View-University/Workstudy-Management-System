@@ -65,12 +65,17 @@ namespace VVU_WSMS
                     if (Utype=="U")
                     {
                         Session["USERNAME"] = Username.Text;
-                        Response.Redirect("~/Students.aspx");
+                        Response.Redirect("~/Student Page.aspx");
                     }
                     if (Utype == "A")
                     {
                         Session["USERNAME"] = Username.Text;
                         Response.Redirect("~/Admin.aspx");
+                    }
+                    if (Utype == "S")
+                    {
+                        Session["USERNAME"] = Username.Text;
+                        Response.Redirect("~/Supervisor.aspx");
                     }
                 }
                 else
