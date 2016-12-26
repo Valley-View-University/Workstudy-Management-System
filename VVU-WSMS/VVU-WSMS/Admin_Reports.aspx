@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Departments.aspx.cs" Inherits="VVU_WSMS.Departments" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin_Reports.aspx.cs" Inherits="VVU_WSMS.Admin_Reports" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +7,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/ >
     <meta name"viewport" content="width-device-width, initial-scale-1.0"/>
-    <title>Admin-Departments</title>
+    <title>Admin Reports</title>
     
     <link href="Content/bootstrap.min.css" rel="stylesheet"/>
     <link href="Content/bootstrap.css" rel="stylesheet" />
@@ -35,7 +34,7 @@
                         </button>
                         <a class="navbar-brand" href="Login.aspx"> <span><img alt="Logo" src="Images/vvu-logo.png" height="30" /></span> VVU WSMS</a>
                     </div>
-                    <div class="navbar-collapse collapse">
+                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li>
                                 <asp:Button ID="btnAdminSignOut" runat="server" Class="btn btn-default navbar-btn " Text="Logout" OnClick="btnAdminSignOut_Click" />
@@ -46,57 +45,46 @@
            </div>
        </div>
   <!---Navbar end--->
-        
-<!---Department form-->
-        <div class="container">
-         <!--  <div class="">-->
-            <div class="form-horizontal">
-                <h2>Departments</h2>
+
+<!--Creating links to various tables-->
+        <h2 class="container" class="col-xs-11">REPORTS</h2>
                 <hr />
-                <div class="form-group">
-                   <asp:Label ID="Label1" runat="server" CssClass="col-md-2 control-label" Text="Department ID"></asp:Label>
-                   <div class="col-md-3">
-                        <asp:TextBox ID="DepartmentID" CssClass="form-control" runat="server"></asp:TextBox>
+        <div class="center">
+             <div class="form-group"
+               
+                <div class="form-horizontal"
+        <!--<div class="center-page">-->
+                 <div class="col-xs-11">
+                <a class="col-xs-11" href="#"><span><img alt="" src="Images/pay.jpg" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">
+                    <asp:LinkButton ID="lnPayRep" runat="server" OnClick="lnPayRep_Click">PAYMENTS REPORT</asp:LinkButton>
+                     </h4>
+                <div class="col-xs-11">
+                <a class="col-xs-11" href="#"><span><img alt="" src="Images/reep.png" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">REPORTS</h4>
+                </div>
+             </div>
 
-                   </div>
-                </div>
-                <div class="form-group">
-                   <asp:Label ID="Label2" runat="server" CssClass="col-md-2 control-label" Text="Department"></asp:Label>
-                    
-                   <div class="col-md-3">
-                        <asp:TextBox ID="Department" CssClass="form-control" runat="server" ></asp:TextBox>
-                   </div>
-                </div>
-                <div class="form-group">
-                   <asp:Label ID="Label3" runat="server" CssClass="col-md-2 control-label" Text="Department Head"></asp:Label>
-                   <div class="col-md-3">
-                        <asp:TextBox ID="DepartmentHead" CssClass="form-control" runat="server" ></asp:TextBox>
-                       <asp:RequiredFieldValidator ID="RequiredFieldValidatorDepartmentHead"  CssClass="text-danger" runat="server" ErrorMessage="The Department Head field is Required!" ControlToValidate="DepartmentHead"></asp:RequiredFieldValidator>
-                   </div>
-                </div>
-                <div class="form-group">
-                       <div class="col-md-2">
-                       </div>
-                    <div class="col-md-6">
-                        <asp:Button ID="btnDeptSave" runat="server" Text="Save" CssClass="btn btn-default" OnClick="btnDeptSave_Click"></asp:Button>
-                    </div>
-                </div>
-              
-            </div>
-       </div>
-<!---Department form-->
+        </div>
+           
+            
 
+        <!--</div>-->
+        </div>
+<!--Creating links to various tables-->
 
   
-  <!---Footer--->
-       <hr />
-       <footer class="footer-pos">
+   <!---Footer--->
+        <p>
+            &nbsp;</p>
+        <hr />
+       <footer class="form-group">
              <div class="container">
                  <p class="pull-right"><a href="#">Back to the top</a></p> 
                  <p class="">&copy; 2016 - VVU WorkStudy Management System &middot; </p>
              </div>
        </footer>
-  <!---Footer-->               
+  <!---Footer-->                  
     </form>
 
 

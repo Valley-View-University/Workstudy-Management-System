@@ -174,11 +174,11 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="Admin_Reports.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Custom-Cs.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Departments.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -249,7 +249,6 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
@@ -372,6 +371,13 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Reports.aspx.cs">
+      <DependentUpon>Admin_Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Reports.aspx.designer.cs">
+      <DependentUpon>Admin_Reports.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -382,13 +388,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Departments.aspx.cs">
-      <DependentUpon>Departments.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Departments.aspx.designer.cs">
-      <DependentUpon>Departments.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -428,10 +427,28 @@
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="rptAdminPay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAdminPay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="rptPrograms.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptPrograms.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptStudents.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStudents.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptStuPay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStuPay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="rptTask.cs">
@@ -496,9 +513,21 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="rptAdminPay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAdminPay.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptPrograms.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPrograms.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStudents.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStudents.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStuPay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStuPay.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptTask.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -47,23 +47,19 @@
   <!---Navbar end--->
 
 <!--Creating links to various tables-->
-        <div class="center">
-            <h2>Admin Page</h2>
+        <h2 class="container">ADMINISTRATOR</h2>
                 <hr />
+        <div class="center">
+            
         <!--<div class="center-page">-->
-            <div class="col-xs-11">
+            <div class="form-group">
                 <a class="col-xs-11" href="Payments.aspx"><span><img alt="" src="Images/pay.jpg" width="140"  height="140" /></span> </a>
-                <h4 class="col-xs-11">Payment</h4>
-            <div class="col-xs-11">
-                <a class="col-xs-11" href="#"><span><img alt="" src="Images/reep.png" width="140"  height="140" /></span> </a>
-                <h4 class="col-xs-11">
-                    <asp:LinkButton ID="lnReport" runat="server" OnClick="lnReport_Click">Programmes</asp:LinkButton>
-                </h4>
+                <h4 class="col-xs-11">PAYMENT</h4>
+            <div class="form-group">
+                <a class="col-xs-11" href="Admin_Reports"><span><img alt="" src="Images/reep.png" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">REPORTS</h4>
             </div>
-            <div class="col-xs-11">
-                <a class="col-xs-11" href="#"><span><img alt="" src="Images/Nation.jpg" width="140"  height="140" /></span> </a>
-                <h4 class="col-xs-11">Nationality</h4>
-            </div>
+           
             
 
         <!--</div>-->
@@ -75,12 +71,12 @@
         <p>
             &nbsp;</p>
         <hr />
-       <footer class="form-group">
+        <footer class="footer-pos">
              <div class="container">
                  <p class="pull-right"><a href="#">Back to the top</a></p> 
                  <p class="">&copy; 2016 - VVU WorkStudy Management System &middot; </p>
              </div>
-       </footer>
+        </footer>
   <!---Footer-->                  
     </form>
 

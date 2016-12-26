@@ -17,35 +17,12 @@
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script src="Scripts/respond.min.js"></script>
 
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 223px;
-            height: 168px;
-        }
-        .auto-style3 {
-            width: 336px;
-        }
-        .auto-style4 {
-            width: 260px;
-            height: 179px;
-        }
-        .auto-style5 {
-            width: 312px;
-        }
-        .auto-style6 {
-            width: 14px;
-        }
-    </style>
-
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
     <div>
         <!---position of navigation bar-->
-           <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+           <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="left: 0px; right: 0px; top: 2px; height: 43px">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -69,9 +46,13 @@
         <!---Navbar--->
 
              <!--<div class="center-page">-->
+        <h2 class="container">Student Portal</h2>
+                <hr />
         <div class="center">
            <div class="form-group"
+               
                 <div class="form-horizontal"
+                    
                  <div class="col-xs-11">
                     <a class="col-xs-11" href="Students.aspx"><span><img alt="" src="Images/register.jpg" width="140"  height="140" /></span> </a>
                     <h4 class="col-xs-11">Registration</h4>

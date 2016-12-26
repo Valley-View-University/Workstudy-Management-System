@@ -49,18 +49,12 @@
   
 
          <!--Student Form-->
-      <div class="container">
+        <div class="container">
             <div class="form-horizontal">
                 <h2>Student Form</h2>
                 <asp:Label ID="lblSuccess" runat="server" CssClass="text-success"></asp:Label>
                 <hr />
-                <div class="form-group">
-                           
-                    <asp:Label ID="Label1" runat="server" CssClass="col-md-1 control-label" Text="StudentID"></asp:Label>
-                    <div class="col-md-3">
-                        <asp:TextBox ID="txtStudID" Class="form-control" runat="server" placeholder="Student ID"></asp:TextBox>
-                   </div>
-                </div>
+                
 
                 <div class="form-group">
                            
@@ -82,8 +76,8 @@
                            
                     <asp:Label ID="Label5" runat="server" CssClass="col-md-1 control-label" Text="Gender"></asp:Label>
                     <div class="col-md-3">
-                    <asp:RadioButton ID="rdMale" runat="server" Text="Female" />
-                    <asp:RadioButton ID="rdFemale" runat="server" class="col-md-offset-0 col-md-6" Text="Male"/>
+                    <asp:RadioButton ID="rdMale" runat="server" class="col-md-offset-0 col-md-6" Text="Male" Checked="True" GroupName="gender" OnCheckedChanged="rdMale_CheckedChanged" />
+                    <asp:RadioButton ID="rdFemale" runat="server" class="col-md-offset-0 col-md-6" Text="Female" GroupName="gender"/>
                     </div>
                 </div>
 
@@ -108,7 +102,7 @@
                            
                     <asp:Label ID="Label12" runat="server" CssClass="col-md-1 control-label" Text="Task"></asp:Label>
                     <div class="col-md-3"> 
-                        <asp:DropDownList ID="ddlTaskID" Class="form-control" runat="server" placeholder="---------" DataSourceID="SqlDataSourceStTask" DataTextField="Task" DataValueField="TaskID" OnSelectedIndexChanged="ddlTask_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlTaskID" Class="form-control" runat="server" placeholder="---------" DataSourceID="SqlDataSourceStTask" DataTextField="Task" DataValueField="Task" OnSelectedIndexChanged="ddlTask_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                         
                         <asp:SqlDataSource ID="SqlDataSourceStTask" runat="server" ConnectionString="<%$ ConnectionStrings:WorkStudyConnectionString1 %>" SelectCommand="SELECT * FROM [Tasks]"></asp:SqlDataSource>
                         <asp:Label ID="lblError" runat="server" CssClass="text-danger" Text=""></asp:Label>

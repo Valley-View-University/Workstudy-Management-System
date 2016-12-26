@@ -29,8 +29,8 @@ namespace VVU_WSMS
                     //Inserting from the form to the database
                     using (SqlConnection conn = new SqlConnection(connstr))
                     {
-                        da.InsertCommand = new SqlCommand("INSERT INTO Users VALUES(@Username,@Password,@Email,@Name,'U')", conn);//adding 'U' helps define the usertype
-                        da.InsertCommand.Parameters.AddWithValue("@Username", txtUsername.Text);
+                        da.InsertCommand = new SqlCommand("INSERT INTO Users VALUES(@StudentID,@Password,@Email,@Name,'U')", conn);//adding 'U' helps define the usertype
+                        da.InsertCommand.Parameters.AddWithValue("@StudentID", txtUsername.Text);
                         da.InsertCommand.Parameters.AddWithValue("@Password", txtPassword.Text);
                         da.InsertCommand.Parameters.AddWithValue("@Email", txtEmail.Text);
                         da.InsertCommand.Parameters.AddWithValue("@Name", txtName.Text);

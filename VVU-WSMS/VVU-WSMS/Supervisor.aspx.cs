@@ -62,7 +62,8 @@ namespace VVU_WSMS
             {
 
                 throw;
-            }        }
+            }
+        }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {

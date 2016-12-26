@@ -34,7 +34,7 @@ namespace VVU_WSMS
         {
             using (SqlConnection conn = new SqlConnection(connstr))
             {
-                da.SelectCommand = new SqlCommand("SELECT * FROM Users WHERE Username='"+Username.Text+"' AND Password='"+ Password.Text+"'", conn);
+                da.SelectCommand = new SqlCommand("SELECT * FROM Users WHERE StudentID='"+Username.Text+"' AND Password='"+ Password.Text+"'", conn);
                 conn.Open();
                 da.Fill(dt);
 
@@ -58,7 +58,7 @@ namespace VVU_WSMS
                     }
                     //fetching usertype value
                     string Utype;
-                    Utype = dt.Rows[0][5].ToString().Trim();
+                    Utype = dt.Rows[0][4].ToString().Trim();
 
 
                     //Check usertype and redirect to the appro. pages

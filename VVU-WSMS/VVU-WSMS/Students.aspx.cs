@@ -35,7 +35,13 @@ namespace VVU_WSMS
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+            //the session name or username is assigned to a string called StudentiD
+            //which is then assigned to the column name studentID in the database table 
+            string StudentID = Session["USERNAME"].ToString();
+
             string gender = "";
+
+            //checks to see which button is click and returns the value
             if (rdFemale.Checked == true)
             {
                 gender = "Female";
@@ -49,16 +55,18 @@ namespace VVU_WSMS
 
                 if (btnSubmit.Text == "Submit")
                 {
-
+                    //Connection to the database
                     SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
-                    da.InsertCommand = new SqlCommand("INSERT INTO Students VALUES(@StudentID,@Firstname,@Lastname,@Othernames,@Gender,@Email,@Telephone,@Supervisor,@DepartmentID,@ProgramID,@NationalityID)", conn);
-                    da.InsertCommand.Parameters.AddWithValue("@StudentID", txtStudID.Text);
+                    //the insertion command. used to insert values entered in the textboxes
+                    da.InsertCommand = new SqlCommand("INSERT INTO Students VALUES(@StudentID,@Firstname,@Lastname,@Othernames,@Gender,@Email,@Telephone,@TaskID,@Supervisor,@DepartmentID,@ProgramID,@NationalityID)", conn);
+                    da.InsertCommand.Parameters.AddWithValue("@StudentID", StudentID);
                     da.InsertCommand.Parameters.AddWithValue("@Firstname", txtFirstname.Text);
                     da.InsertCommand.Parameters.AddWithValue("@Lastname", txtLastname.Text);
                     da.InsertCommand.Parameters.AddWithValue("@Othernames", txtOthers.Text);
                     da.InsertCommand.Parameters.AddWithValue("@Gender", gender);
                     da.InsertCommand.Parameters.AddWithValue("@Email", txtEmail.Text);
                     da.InsertCommand.Parameters.AddWithValue("@Telephone", txtTel.Text);
+                    da.InsertCommand.Parameters.AddWithValue("@TaskID", ddlTaskID.SelectedValue);
                     da.InsertCommand.Parameters.AddWithValue("@Supervisor", txtSupervisor.Text);
                     da.InsertCommand.Parameters.AddWithValue("@DepartmentID", ddlDept.SelectedValue);
                     da.InsertCommand.Parameters.AddWithValue("@ProgramID", ddlProgram.SelectedValue);
@@ -71,16 +79,18 @@ namespace VVU_WSMS
                     conn.Close();
 
                 }
+                //clears each textbox
                 txtEmail.Text="";
                 txtFirstname.Text="";
                 txtLastname.Text="";
                 txtOthers.Text="";
-                txtStudID.Text="";
                 txtTel.Text="";
                 txtEmail.Text = "";
                 txtSupervisor.Text = "";
-                txtStudID.Focus();
 
+                //cursor is focused in the textbox
+                txtFirstname.Focus();
+                Response.Redirect("~/Student Page.aspx");
             }
             catch (Exception)
             {
@@ -94,7 +104,7 @@ namespace VVU_WSMS
         {
 
             SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
-            da.SelectCommand = new SqlCommand("SELECT * FROM TASKS WHERE TaskID ='" + ddlTaskID.SelectedValue + "' ", conn);
+            da.SelectCommand = new SqlCommand("SELECT * FROM TASKS WHERE Task ='" + ddlTaskID.SelectedValue + "' ", conn);
             ds.Clear();
             da.Fill(ds);
 
@@ -116,6 +126,11 @@ namespace VVU_WSMS
 
             
             }
+        }
+
+        protected void rdMale_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

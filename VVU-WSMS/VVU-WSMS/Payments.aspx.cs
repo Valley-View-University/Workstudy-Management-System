@@ -22,42 +22,56 @@ namespace VVU_WSMS
 
         protected void btnPay_Click(object sender, EventArgs e)
         {
-            string message="Payment successful.";
+            string date = DateTime.Now.ToString();
+            //showing or displaying success message after insertion is done
+            string message = "Payment successful.";
             string script = "window.onload=function(){ alert('";
             script += message;
             script += "')};";
 
-            SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
-            da.InsertCommand = new SqlCommand("INSERT INTO Coordinator VALUES(@StudentID,@Firstname,@Lastname,@Othernames,@Task,@Hours,@APH)", conn);
-            da.InsertCommand.Parameters.AddWithValue("@StudentID", txtStudentID.Text);
-            da.InsertCommand.Parameters.AddWithValue("@Firstname", txtFirstname.Text);
-            da.InsertCommand.Parameters.AddWithValue("@Lastname", txtLastname.Text);
-            da.InsertCommand.Parameters.AddWithValue("@Othernames", txtOthernames.Text);
-            da.InsertCommand.Parameters.AddWithValue("@Task", txtTask.Text);
-            da.InsertCommand.Parameters.AddWithValue("@Hours", txtHours.Text);
-            da.InsertCommand.Parameters.AddWithValue("@APH", txtAmount.Text);
+            try
+            {
+                //Insertion of values into database
+                SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
+                da.InsertCommand = new SqlCommand("INSERT INTO Coordinator VALUES(@StudentID,@Firstname,@Lastname,@Othernames,@Task,@Hours,@APH,@Date)", conn);
+                da.InsertCommand.Parameters.AddWithValue("@StudentID", txtStudentID.Text);
+                da.InsertCommand.Parameters.AddWithValue("@Firstname", txtFirstname.Text);
+                da.InsertCommand.Parameters.AddWithValue("@Lastname", txtLastname.Text);
+                da.InsertCommand.Parameters.AddWithValue("@Othernames", txtOthernames.Text);
+                da.InsertCommand.Parameters.AddWithValue("@Task", txtTask.Text);
+                da.InsertCommand.Parameters.AddWithValue("@Hours", txtHours.Text);
+                da.InsertCommand.Parameters.AddWithValue("@APH", txtAmount.Text);
+                da.InsertCommand.Parameters.AddWithValue("@Date", Convert.ToDateTime(date));
 
 
 
 
 
-            conn.Open();
-            da.InsertCommand.ExecuteNonQuery();
+                conn.Open();
+                da.InsertCommand.ExecuteNonQuery();
 
-            //Displays the success message on the screen
-            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+                //Displays the success message on the screen
+                ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
 
-            conn.Close();
+                conn.Close();
 
+                //clears textboxes after operation is done
+                txtFirstname.Text = "";
+                txtLastname.Text = "";
+                txtOthernames.Text = "";
+                txtStudentID.Text = "";
+                txtHours.Text = "";
+                txtTask.Text = "";
+                txtAmount.Text = "";
+                //focuses cursor in the studentid textbox
+                txtStudentID.Focus();
 
-            txtFirstname.Text = "";
-            txtLastname.Text = "";
-            txtOthernames.Text = "";
-            txtStudentID.Text = "";
-            txtHours.Text = "";
-            txtTask.Text = "";
-            txtStudentID.Focus();
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
 
         }
 
@@ -69,39 +83,50 @@ namespace VVU_WSMS
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
-            da.SelectCommand = new SqlCommand("SELECT * FROM Supervisors WHERE StudentID='" + txtStudentID.Text + "' ", conn);
-            ds.Clear();
-            da.Fill(ds);
 
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                foreach (DataRow dr in ds.Tables[0].Rows)//loops through tables and return assigned indexes
+                //select all records in the table
+                SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
+                da.SelectCommand = new SqlCommand("SELECT * FROM Supervisors WHERE StudentID='" + txtStudentID.Text + "' ", conn);
+                ds.Clear();
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-                    txtStudentID.Text = dr[0].ToString();
-                    txtFirstname.Text = dr[1].ToString();
-                    txtLastname.Text = dr[2].ToString();
-                    txtOthernames.Text = dr[3].ToString();
-                    txtTask.Text = dr[4].ToString();
-                    txtHours.Text = dr[5].ToString();
+                    foreach (DataRow dr in ds.Tables[0].Rows)//loops through tables and return assigned indexes
+                    {
+                        txtStudentID.Text = dr[0].ToString();
+                        txtFirstname.Text = dr[1].ToString();
+                        txtLastname.Text = dr[2].ToString();
+                        txtOthernames.Text = dr[3].ToString();
+                        txtTask.Text = dr[4].ToString();
+                        txtHours.Text = dr[5].ToString();
 
 
+                    }
+                }
+                else
+                {
+
+                    lblError.Text = "StudentID does not exist";
+                    /*txtStudentID.Text = "";
+                    txtFirstname.Text = "";
+                    txtLastname.Text = "";
+                    txtOthernames.Text = "";
+                    txtHours.Text = "";
+                    lblError.Text = "";
+                    */
                 }
             }
-            else
+            catch (Exception)
             {
 
-                lblError.Text = "StudentID does not exist";
-                /*txtStudentID.Text = "";
-                txtFirstname.Text = "";
-                txtLastname.Text = "";
-                txtOthernames.Text = "";
-                txtHours.Text = "";
-                lblError.Text = "";
-                */
-
-
+                throw;
             }
+
+
         }
     }
+
 }
