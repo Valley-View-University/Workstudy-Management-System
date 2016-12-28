@@ -60,8 +60,10 @@
                     <asp:LinkButton ID="lnPayRep" runat="server" OnClick="lnPayRep_Click">PAYMENTS REPORT</asp:LinkButton>
                      </h4>
                 <div class="col-xs-11">
-                <a class="col-xs-11" href="#"><span><img alt="" src="Images/reep.png" width="140"  height="140" /></span> </a>
-                <h4 class="col-xs-11">REPORTS</h4>
+                <a class="col-xs-11" href="#"><span><img alt="" src="Images/acct.ico" width="140"  height="140" /></span> </a>
+                <h4 class="col-xs-11">
+                    <asp:LinkButton ID="lnStudRep" runat="server" OnClick="lnStudRep_Click">Students Report</asp:LinkButton>
+                    </h4>
                 </div>
              </div>
 

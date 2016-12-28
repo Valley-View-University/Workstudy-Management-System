@@ -31,6 +31,15 @@ namespace VVU_WSMS {
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
         
         /// <summary>
+        /// RequiredFieldValidatorUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUsername;
+        
+        /// <summary>
         /// txtPassword control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace VVU_WSMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        
+        /// <summary>
+        /// RequiredFieldValidatoPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatoPassword;
         
         /// <summary>
         /// txtConfirmPass control.
@@ -49,6 +67,15 @@ namespace VVU_WSMS {
         protected global::System.Web.UI.WebControls.TextBox txtConfirmPass;
         
         /// <summary>
+        /// RequiredFieldValidatorConfirm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorConfirm;
+        
+        /// <summary>
         /// txtName control.
         /// </summary>
         /// <remarks>
@@ -58,6 +85,15 @@ namespace VVU_WSMS {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
+        /// RequiredFieldValidatorName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorName;
+        
+        /// <summary>
         /// txtEmail control.
         /// </summary>
         /// <remarks>
@@ -65,6 +101,15 @@ namespace VVU_WSMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        
+        /// <summary>
+        /// RequiredFieldValidatorEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorEmail;
         
         /// <summary>
         /// btnSignup control.

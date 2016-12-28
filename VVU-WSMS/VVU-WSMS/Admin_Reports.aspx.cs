@@ -46,5 +46,21 @@ namespace VVU_WSMS
                 throw;
             }
         }
+
+        protected void lnStudRep_Click(object sender, EventArgs e)
+        {
+            string FilePath = Server.MapPath("~/rptStudents.rpt");
+            ReportDocument rdoc = new ReportDocument();
+            rdoc.Load(FilePath);
+            ProjectTableAdapters.StudentsTableAdapter ob = new ProjectTableAdapters.StudentsTableAdapter();
+
+            DataTable oba = new DataTable();
+            oba = ob.GetData();
+            rdoc.SetDataSource(oba);
+            Response.Clear();
+            Response.Buffer = true;
+            Response.ContentType = "application/pdf";
+            rdoc.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "Registered Students");
+        }
     }
 }

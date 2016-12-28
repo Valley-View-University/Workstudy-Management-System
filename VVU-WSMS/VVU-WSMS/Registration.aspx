@@ -44,31 +44,39 @@
            </div>
         </div>
   <!---Sign up page-->
+        <h2 class="container">Sign Up Form</h2>
+                
+                <hr />
         <div class="center-page">
 
             <label class="col-xs-11">Username</label>
             <div class="col-xs-11">
-            <asp:TextBox ID="txtUsername" runat="server" Class="form-control" placeholder="Username"></asp:TextBox>
+                <asp:TextBox ID="txtUsername" runat="server" Class="form-control" placeholder="Username"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorUsername"  CssClass="text-danger" runat="server" ErrorMessage="The Username field is required" ControlToValidate="txtUsername"></asp:RequiredFieldValidator>
             </div>
 
             <label class="col-xs-11">Password</label>
             <div class="col-xs-11">
-            <asp:TextBox ID="txtPassword" runat="server" Class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" Class="form-control" placeholder="Password" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatoPassword" CssClass="text-danger" runat="server" ErrorMessage="The Password field is required" ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
             </div>
 
             <label class="col-xs-11">Confirm Password</label>
             <div class="col-xs-11">
-            <asp:TextBox ID="txtConfirmPass" runat="server" Class="form-control" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="txtConfirmPass" runat="server" Class="form-control" placeholder="Confirm Password" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorConfirm" CssClass="text-danger" runat="server" ErrorMessage="Password must be confirmed" ControlToValidate="txtConfirmPass"></asp:RequiredFieldValidator>
             </div>
 
             <label class="col-xs-11">Name</label>
             <div class="col-xs-11">
-            <asp:TextBox ID="txtName" runat="server" Class="form-control" placeholder="Name"></asp:TextBox>
+                <asp:TextBox ID="txtName" runat="server" Class="form-control" placeholder="Name"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorName" CssClass="text-danger" runat="server" ErrorMessage="The Name field is required" ControlToValidate="txtName"></asp:RequiredFieldValidator>
             </div>
 
             <label class="col-xs-11">Email</label>
             <div class="col-xs-11">
-            <asp:TextBox ID="txtEmail" runat="server" Class="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" Class="form-control" placeholder="Email" TextMode="Email"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidatorEmail" CssClass="text-danger" runat="server" ErrorMessage="The Email field is required" ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
             </div>
 
             <div class="col-xs-11 space-vert">

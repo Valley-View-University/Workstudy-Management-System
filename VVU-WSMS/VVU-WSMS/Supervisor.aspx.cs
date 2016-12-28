@@ -29,6 +29,13 @@ namespace VVU_WSMS
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
 
+            //showing or displaying success message after insertion is done
+            string message = "Uploaded Successfully.";
+            string script = "window.onload=function(){ alert('";
+            script += message;
+            script += "')};";
+
+
             try
             {
                 SqlConnection conn = new SqlConnection(connstr.ConnectionStr());
@@ -46,6 +53,10 @@ namespace VVU_WSMS
 
                 conn.Open();
                 da.InsertCommand.ExecuteNonQuery();
+
+                //Displays the success message on the screen
+                ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
                 conn.Close();
 
 

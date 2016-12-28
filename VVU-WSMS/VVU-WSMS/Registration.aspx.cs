@@ -22,9 +22,15 @@ namespace VVU_WSMS
 
         protected void btnSignup_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text != "" && txtPassword.Text != "" && txtConfirmPass.Text != "" && txtEmail.Text != "" && txtName.Text != "")
-            {
-                if (txtPassword.Text == txtConfirmPass.Text)
+            //showing or displaying success message after insertion is done
+            string message = "Signed-Up Successfully.";
+            string script = "window.onload=function(){ alert('";
+            script += message;
+            script += "')};";
+            //Displays the success message on the screen
+            ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
+            if (txtPassword.Text == txtConfirmPass.Text)
                 {
                     //Inserting from the form to the database
                     using (SqlConnection conn = new SqlConnection(connstr))
@@ -36,11 +42,11 @@ namespace VVU_WSMS
                         da.InsertCommand.Parameters.AddWithValue("@Name", txtName.Text);
                         conn.Open();
                         da.InsertCommand.ExecuteNonQuery();
-
+                       
+                       
                         conn.Close();
 
-                        LabMsg.Text = "Signup successful";
-                        LabMsg.ForeColor = Color.Green;
+                        
                         Response.Redirect("~/Login.aspx");
 
                         txtUsername.Text = "";
@@ -56,11 +62,7 @@ namespace VVU_WSMS
                     LabMsg.Text = "Passwords do not match";
                 }
             }
-            else
-            {
-                LabMsg.ForeColor = Color.Red;
-                LabMsg.Text = "All fields are mandatory";
-            }
+            
        }
-    }
+    
 }

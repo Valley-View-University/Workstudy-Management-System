@@ -184,6 +184,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Images\acct.ico" />
     <Content Include="Images\pay.jpg" />
     <Content Include="Payments.aspx" />
     <Content Include="Project.xsc">
@@ -244,7 +245,6 @@
     <Content Include="Student Page.aspx" />
     <Content Include="Students.aspx" />
     <Content Include="Supervisor.aspx" />
-    <Content Include="View Students.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -433,12 +433,6 @@
       <DependentUpon>rptAdminPay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptPrograms.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptPrograms.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="rptStudents.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -449,12 +443,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptStuPay.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="rptTask.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptTask.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -494,13 +482,6 @@
     <Compile Include="Supervisor.aspx.designer.cs">
       <DependentUpon>Supervisor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="View Students.aspx.cs">
-      <DependentUpon>View Students.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="View Students.aspx.designer.cs">
-      <DependentUpon>View Students.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -517,10 +498,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptAdminPay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptPrograms.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptPrograms.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="rptStudents.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptStudents.cs</LastGenOutput>
@@ -528,10 +505,6 @@
     <EmbeddedResource Include="rptStuPay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptStuPay.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rptTask.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptTask.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

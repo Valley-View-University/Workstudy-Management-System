@@ -35,6 +35,13 @@ namespace VVU_WSMS
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
+
+            //showing or displaying success message after insertion is done
+            string message = "Registration successful.";
+            string script = "window.onload=function(){ alert('";
+            script += message;
+            script += "')};";
+
             //the session name or username is assigned to a string called StudentiD
             //which is then assigned to the column name studentID in the database table 
             string StudentID = Session["USERNAME"].ToString();
@@ -76,6 +83,10 @@ namespace VVU_WSMS
 
                     conn.Open();
                     da.InsertCommand.ExecuteNonQuery();
+
+                    //Displays the success message on the screen
+                    ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+
                     conn.Close();
 
                 }

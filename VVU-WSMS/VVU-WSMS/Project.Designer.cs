@@ -1424,12 +1424,6 @@ namespace VVU_WSMS {
             
             private global::System.Data.DataColumn columnStudentID;
             
-            private global::System.Data.DataColumn columnFirstname;
-            
-            private global::System.Data.DataColumn columnLastname;
-            
-            private global::System.Data.DataColumn columnOthernames;
-            
             private global::System.Data.DataColumn columnGender;
             
             private global::System.Data.DataColumn columnEmail;
@@ -1445,6 +1439,8 @@ namespace VVU_WSMS {
             private global::System.Data.DataColumn columnProgram;
             
             private global::System.Data.DataColumn columnNationality;
+            
+            private global::System.Data.DataColumn columnName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1484,30 +1480,6 @@ namespace VVU_WSMS {
             public global::System.Data.DataColumn StudentIDColumn {
                 get {
                     return this.columnStudentID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FirstnameColumn {
-                get {
-                    return this.columnFirstname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn LastnameColumn {
-                get {
-                    return this.columnLastname;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OthernamesColumn {
-                get {
-                    return this.columnOthernames;
                 }
             }
             
@@ -1577,6 +1549,14 @@ namespace VVU_WSMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1612,13 +1592,10 @@ namespace VVU_WSMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public StudentsRow AddStudentsRow(string StudentID, string Firstname, string Lastname, string Othernames, string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality) {
+            public StudentsRow AddStudentsRow(string StudentID, string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality, string Name) {
                 StudentsRow rowStudentsRow = ((StudentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         StudentID,
-                        Firstname,
-                        Lastname,
-                        Othernames,
                         Gender,
                         Email,
                         Telephone,
@@ -1626,7 +1603,8 @@ namespace VVU_WSMS {
                         Supervisor,
                         Department,
                         Program,
-                        Nationality};
+                        Nationality,
+                        Name};
                 rowStudentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudentsRow);
                 return rowStudentsRow;
@@ -1657,9 +1635,6 @@ namespace VVU_WSMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnStudentID = base.Columns["StudentID"];
-                this.columnFirstname = base.Columns["Firstname"];
-                this.columnLastname = base.Columns["Lastname"];
-                this.columnOthernames = base.Columns["Othernames"];
                 this.columnGender = base.Columns["Gender"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnTelephone = base.Columns["Telephone"];
@@ -1668,6 +1643,7 @@ namespace VVU_WSMS {
                 this.columnDepartment = base.Columns["Department"];
                 this.columnProgram = base.Columns["Program"];
                 this.columnNationality = base.Columns["Nationality"];
+                this.columnName = base.Columns["Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1675,12 +1651,6 @@ namespace VVU_WSMS {
             private void InitClass() {
                 this.columnStudentID = new global::System.Data.DataColumn("StudentID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStudentID);
-                this.columnFirstname = new global::System.Data.DataColumn("Firstname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFirstname);
-                this.columnLastname = new global::System.Data.DataColumn("Lastname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastname);
-                this.columnOthernames = new global::System.Data.DataColumn("Othernames", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOthernames);
                 this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGender);
                 this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1697,16 +1667,13 @@ namespace VVU_WSMS {
                 base.Columns.Add(this.columnProgram);
                 this.columnNationality = new global::System.Data.DataColumn("Nationality", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNationality);
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnStudentID}, true));
                 this.columnStudentID.AllowDBNull = false;
                 this.columnStudentID.Unique = true;
                 this.columnStudentID.MaxLength = 50;
-                this.columnFirstname.AllowDBNull = false;
-                this.columnFirstname.MaxLength = 50;
-                this.columnLastname.AllowDBNull = false;
-                this.columnLastname.MaxLength = 50;
-                this.columnOthernames.MaxLength = 50;
                 this.columnGender.AllowDBNull = false;
                 this.columnGender.MaxLength = 50;
                 this.columnEmail.AllowDBNull = false;
@@ -1723,6 +1690,8 @@ namespace VVU_WSMS {
                 this.columnProgram.MaxLength = 50;
                 this.columnNationality.AllowDBNull = false;
                 this.columnNationality.MaxLength = 50;
+                this.columnName.ReadOnly = true;
+                this.columnName.MaxLength = 152;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2514,44 +2483,6 @@ namespace VVU_WSMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Firstname {
-                get {
-                    return ((string)(this[this.tableStudents.FirstnameColumn]));
-                }
-                set {
-                    this[this.tableStudents.FirstnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Lastname {
-                get {
-                    return ((string)(this[this.tableStudents.LastnameColumn]));
-                }
-                set {
-                    this[this.tableStudents.LastnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Othernames {
-                get {
-                    try {
-                        return ((string)(this[this.tableStudents.OthernamesColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Othernames\' in table \'Students\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableStudents.OthernamesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string Gender {
                 get {
                     return ((string)(this[this.tableStudents.GenderColumn]));
@@ -2640,14 +2571,30 @@ namespace VVU_WSMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsOthernamesNull() {
-                return this.IsNull(this.tableStudents.OthernamesColumn);
+            public string Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudents.NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Name\' in table \'Students\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudents.NameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetOthernamesNull() {
-                this[this.tableStudents.OthernamesColumn] = global::System.Convert.DBNull;
+            public bool IsNameNull() {
+                return this.IsNull(this.tableStudents.NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNameNull() {
+                this[this.tableStudents.NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3990,9 +3937,6 @@ namespace VVU_WSMS.ProjectTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Students";
             tableMapping.ColumnMappings.Add("StudentID", "StudentID");
-            tableMapping.ColumnMappings.Add("Firstname", "Firstname");
-            tableMapping.ColumnMappings.Add("Lastname", "Lastname");
-            tableMapping.ColumnMappings.Add("Othernames", "Othernames");
             tableMapping.ColumnMappings.Add("Gender", "Gender");
             tableMapping.ColumnMappings.Add("Email", "Email");
             tableMapping.ColumnMappings.Add("Telephone", "Telephone");
@@ -4001,36 +3945,18 @@ namespace VVU_WSMS.ProjectTableAdapters {
             tableMapping.ColumnMappings.Add("Department", "Department");
             tableMapping.ColumnMappings.Add("Program", "Program");
             tableMapping.ColumnMappings.Add("Nationality", "Nationality");
+            tableMapping.ColumnMappings.Add("Name", "Name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Students] WHERE (([StudentID] = @Original_StudentID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Students] WHERE (([StudentID] = @Original_StudentID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StudentID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StudentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Students] ([StudentID], [Firstname], [Lastname], [Othernames], [Gender], [Email], [Telephone], [TaskID], [Supervisor], [Department], [Program], [Nationality]) VALUES (@StudentID, @Firstname, @Lastname, @Othernames, @Gender, @Email, @Telephone, @TaskID, @Supervisor, @Department, @Program, @Nationality)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StudentID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StudentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firstname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lastname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Othernames", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Othernames", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telephone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TaskID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TaskID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Supervisor", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Supervisor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Department", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Department", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Program", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Program", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nationality", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nationality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Students] SET [StudentID] = @StudentID, [Firstname] = @Firstname, [Lastname] = @Lastname, [Othernames] = @Othernames, [Gender] = @Gender, [Email] = @Email, [Telephone] = @Telephone, [TaskID] = @TaskID, [Supervisor] = @Supervisor, [Department] = @Department, [Program] = @Program, [Nationality] = @Nationality WHERE (([StudentID] = @Original_StudentID))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Students] SET [StudentID] = @StudentID, [Gender] = @Gender, [Email] = @Email, [Telephone] = @Telephone, [TaskID] = @TaskID, [Supervisor] = @Supervisor, [Department] = @Department, [Program] = @Program, [Nationality] = @Nationality WHERE (([StudentID] = @Original_StudentID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StudentID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StudentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Firstname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lastname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Othernames", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Othernames", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telephone", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telephone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4055,8 +3981,9 @@ namespace VVU_WSMS.ProjectTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT StudentID, Firstname, Lastname, Othernames, Gender, Email, Telephone, Task" +
-                "ID, Supervisor, Department, Program, Nationality FROM dbo.Students";
+            this._commandCollection[0].CommandText = "SELECT        StudentID, Firstname + \' \' + Lastname + \' \' + Othernames AS Name, G" +
+                "ender, Email, Telephone, TaskID, Supervisor, Department, Program, Nationality\r\nF" +
+                "ROM            Students";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4143,178 +4070,67 @@ namespace VVU_WSMS.ProjectTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string StudentID, string Firstname, string Lastname, string Othernames, string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality) {
-            if ((StudentID == null)) {
-                throw new global::System.ArgumentNullException("StudentID");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(StudentID));
-            }
-            if ((Firstname == null)) {
-                throw new global::System.ArgumentNullException("Firstname");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Firstname));
-            }
-            if ((Lastname == null)) {
-                throw new global::System.ArgumentNullException("Lastname");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Lastname));
-            }
-            if ((Othernames == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Othernames));
-            }
-            if ((Gender == null)) {
-                throw new global::System.ArgumentNullException("Gender");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Gender));
-            }
-            if ((Email == null)) {
-                throw new global::System.ArgumentNullException("Email");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Email));
-            }
-            if ((Telephone == null)) {
-                throw new global::System.ArgumentNullException("Telephone");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Telephone));
-            }
-            if ((TaskID == null)) {
-                throw new global::System.ArgumentNullException("TaskID");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(TaskID));
-            }
-            if ((Supervisor == null)) {
-                throw new global::System.ArgumentNullException("Supervisor");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Supervisor));
-            }
-            if ((Department == null)) {
-                throw new global::System.ArgumentNullException("Department");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Department));
-            }
-            if ((Program == null)) {
-                throw new global::System.ArgumentNullException("Program");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Program));
-            }
-            if ((Nationality == null)) {
-                throw new global::System.ArgumentNullException("Nationality");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(Nationality));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string StudentID, string Firstname, string Lastname, string Othernames, string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality, string Original_StudentID) {
+        public virtual int Update(string StudentID, string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality, string Original_StudentID) {
             if ((StudentID == null)) {
                 throw new global::System.ArgumentNullException("StudentID");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(StudentID));
             }
-            if ((Firstname == null)) {
-                throw new global::System.ArgumentNullException("Firstname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Firstname));
-            }
-            if ((Lastname == null)) {
-                throw new global::System.ArgumentNullException("Lastname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Lastname));
-            }
-            if ((Othernames == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Othernames));
-            }
             if ((Gender == null)) {
                 throw new global::System.ArgumentNullException("Gender");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Gender));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Gender));
             }
             if ((Email == null)) {
                 throw new global::System.ArgumentNullException("Email");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Email));
             }
             if ((Telephone == null)) {
                 throw new global::System.ArgumentNullException("Telephone");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Telephone));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Telephone));
             }
             if ((TaskID == null)) {
                 throw new global::System.ArgumentNullException("TaskID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(TaskID));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(TaskID));
             }
             if ((Supervisor == null)) {
                 throw new global::System.ArgumentNullException("Supervisor");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Supervisor));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Supervisor));
             }
             if ((Department == null)) {
                 throw new global::System.ArgumentNullException("Department");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Department));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Department));
             }
             if ((Program == null)) {
                 throw new global::System.ArgumentNullException("Program");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Program));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Program));
             }
             if ((Nationality == null)) {
                 throw new global::System.ArgumentNullException("Nationality");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Nationality));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Nationality));
             }
             if ((Original_StudentID == null)) {
                 throw new global::System.ArgumentNullException("Original_StudentID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_StudentID));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_StudentID));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4336,8 +4152,8 @@ namespace VVU_WSMS.ProjectTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Firstname, string Lastname, string Othernames, string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality, string Original_StudentID) {
-            return this.Update(Original_StudentID, Firstname, Lastname, Othernames, Gender, Email, Telephone, TaskID, Supervisor, Department, Program, Nationality, Original_StudentID);
+        public virtual int Update(string Gender, string Email, string Telephone, string TaskID, string Supervisor, string Department, string Program, string Nationality, string Original_StudentID) {
+            return this.Update(Original_StudentID, Gender, Email, Telephone, TaskID, Supervisor, Department, Program, Nationality, Original_StudentID);
         }
     }
     
